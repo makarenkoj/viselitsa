@@ -1,7 +1,6 @@
 # encoding: UTF-8
 
 class ResultPrinter
-
   def initialize
     @status_image = []
     current_path = File.dirname(__FILE__)
@@ -57,12 +56,10 @@ class ResultPrinter
         result += "__ "
       end
     end
-
-    return result
+    result
   end
 
   def cls
     system("clear") || system("cls")
   end
-
 end
