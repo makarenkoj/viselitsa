@@ -5,10 +5,8 @@ class ResultPrinter
     @status_image = []
     current_path = File.dirname(__FILE__)
     counter = 0
-
     while counter <= 7
       file_name = current_path + "/image/#{counter}.txt"
-
       if File.exist?(file_name)
         file = File.new(file_name, "r:UTF-8")
         @status_image << file.read
@@ -16,7 +14,6 @@ class ResultPrinter
       else
         @status_image << "\n [ изображение не найдено ] \n"
       end
-
       counter += 1
     end
   end
@@ -31,7 +28,6 @@ class ResultPrinter
     puts "Слово: #{get_word_for_print(game.letters, game.good_letters)}"
     puts "Ошибки: #{game.bad_letters.join(", ")}"
     print_viselitsa(game.errors)
-
     if game.status == -1
       puts
       puts "Вы проиграли :("
@@ -48,7 +44,6 @@ class ResultPrinter
 
   def get_word_for_print(letters, good_letters)
     result = ""
-
     for item in letters do
       if good_letters.include?(item)
         result += item + " "
