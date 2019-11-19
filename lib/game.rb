@@ -1,4 +1,5 @@
 # encoding: UTF-8
+require "unicode_utils/downcase"
 
 class Game
   def initialize(slovo)
@@ -13,7 +14,7 @@ class Game
     if slovo == nil || slovo == ""
       abort "Загадано пустое слово, нечего отгадывать. Закрываемся"
     end
-    slovo.encode('UTF-8').downcase.split("")
+    UnicodeUtils.downcase(slovo).split("")
   end
 
   def status
@@ -62,7 +63,7 @@ class Game
     puts "\nВведите следующую букву"
     letter = ""
     while letter == ""
-      letter = STDIN.gets.encode("UTF-8").downcase.chomp
+      letter = STDIN.gets.UnicodeUtils.downcase(letter).chomp
     end
     next_step(letter)
   end
