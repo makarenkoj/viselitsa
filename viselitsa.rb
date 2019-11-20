@@ -9,9 +9,9 @@ if Gem.win_platform?
   end
 end
 
-require_relative "lib/game"
-require_relative "lib/result_printer"
-require_relative "lib/word_reader"
+require_relative "game"
+require_relative "result_printer"
+require_relative "word_reader"
 
 puts "Игра виселица. Версия 3. (c) goodprogrammer.ru\n\n"
 sleep 1
